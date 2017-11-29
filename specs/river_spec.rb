@@ -17,8 +17,14 @@ class TestRiver < MiniTest::Test
   end
 
   def test_get_fish_stock
-    #*** need to go back over this test ***
-    assert_equal([@fish1,@fish2,@fish3], @river.fish_stock)
+    expected = [@fish1,@fish2,@fish3]
+    assert_equal(expected, @river.fish_stock)
+  end
+
+  def test_get_fish_name_in_fish_stock
+    #another way to the test that fish
+    #stock has been populated correctly 
+    assert_equal("Pinkie", @river.fish_stock.last().name())
   end
 
   def test_count_fish
